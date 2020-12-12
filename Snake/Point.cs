@@ -14,7 +14,6 @@ namespace Snake
 
         public Point()
         {
-
         }
 
         public Point(int _x, int _y, char _sym)
