@@ -13,15 +13,8 @@ namespace Snake
         {
             Console.CursorVisible = false; // Hide cursor in console
 
-            // Border draw
-            HorizontalLine topLine = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0, 0, 24, '+');
-            VerticalLine rightLine = new VerticalLine(78, 0, 24, '+');
-            topLine.Draw();
-            downLine.Draw();
-            leftLine.Draw();
-            rightLine.Draw();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
 
             // Point draw
             Point p = new Point(4, 5, '*');
@@ -34,6 +27,10 @@ namespace Snake
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail() )
+                {
+                    break;
+                }
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
