@@ -12,19 +12,22 @@ namespace Snake
         {
             Console.CursorVisible = false; // Hide cursor in console
 
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            // Border draw
+            HorizontalLine topLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftLine = new VerticalLine(0, 0, 24, '+');
+            VerticalLine rightLine = new VerticalLine(78, 0, 24, '+');
+            topLine.Draw();
+            downLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
+            // Point draw
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
-            HorizontalLine hLine = new HorizontalLine(5, 10, 8, '+');
-            hLine.Draw();
-
-            VerticalLine vLine = new VerticalLine(12, 8, 15, '|');
-            vLine.Draw();
 
             Console.ReadLine();
-        }
+        } 
     }
 }
