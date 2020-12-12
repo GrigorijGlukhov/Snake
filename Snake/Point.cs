@@ -44,6 +44,12 @@ namespace Snake
                 y += _offset;
         }
 
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
         // Draw char in positions x and y
         public void Draw()
         {
