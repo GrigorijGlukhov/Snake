@@ -57,6 +57,11 @@ namespace Snake
             Console.Write(sym);
         }
 
+        public bool IsHit(Point food)
+        {
+            return food.x == this.x && food.y == this.y;
+        }
+
         // Debug method for Debuger
         public override string ToString()
         {
